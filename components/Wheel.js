@@ -112,7 +112,7 @@ export const Wheel = ({ projects }) => {
 				<div className="center-position"></div>
 				{projects.map((item , i) => {
 					return(
-						<div className="card active" data-index={i + 1}>
+						<div className="card active" data-index={i + 1} key={`card-${i}`}>
 							<img src={item.data.cover_image.url} />
 							<div className='info'>
 								<p>{item.data.year}</p>
