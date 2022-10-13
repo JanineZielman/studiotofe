@@ -1,0 +1,33 @@
+@media only screen and (max-width: 600px) {
+	h1{
+		font-size: 36px;
+	}
+	p{
+		font-size: 14px;
+	}
+	.wheel {
+		width: 100vw;
+		height: 100vh;
+		top: 100%;
+		left: 50%;
+	}
+	.card{
+		width: 30vw;
+		height: 45vw;
+	}
+	.card.current {
+		width: 60vw;
+		height: 90vw;
+	}
+	.arrows{
+		top: 50%;
+	}
+	.info{
+		left: -15vw;
+		top: -100%;
+		width: 80vw;
+		h1 {
+			font-size: 36px;
+		}
+	}
+}

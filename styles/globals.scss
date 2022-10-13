@@ -38,7 +38,8 @@ p a {
 
 
 :root {
-	--easing: cubic-bezier(0.18, 0.5, 0.8, 1);
+	// --easing: cubic-bezier(0.18, 0.5, 0.8, 1);
+	--easing: ease-in-out;
 	--duration: 1s;
 }
 
@@ -72,26 +73,29 @@ p a {
 .card {
 	width: 15vw;
 	height: auto;
-	// overflow: hidden;
+	height: 22.5vw;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	cursor: pointer;
-	transition: all var(--duration) var(--easing);
+	transition: transform var(--duration) var(--easing);
 }
 
 .card.current {
 	z-index: 999;
 	width: 25vw;
+	height: 37.5vw;
 	.info{
 		display: block;
+		opacity: 1;
+		height: 100%;
 	}
 }
 
 .card img {
 	width: 100%;
-	height: auto;
+	height: 100%;	
 	aspect-ratio: 2 / 3;
 	pointer-events: none;
 }
@@ -132,12 +136,15 @@ button:active {
 }
 
 .info{
-	display: none;
+	// display: none;
+	transition: all var(--duration) ease-in-out;
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
 	position: absolute;
 	top: -20vh;
 	left: -35vw;
 	width: 25vw;
-	height: 200px;
 	padding-left: 2vw;
 	padding-top: 2vw;
 	h1{
