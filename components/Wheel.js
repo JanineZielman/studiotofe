@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { PrismicLink} from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
 export const Wheel = ({ projects }) => {
@@ -103,6 +104,12 @@ export const Wheel = ({ projects }) => {
 
 			handleRotate(rotate, nextCard);
 		};
+
+				
+		const initialCard = document.querySelector(`[data-index="1"]`);
+		initialCard.classList.add("current");
+
+
 	});
 
 
@@ -111,6 +118,7 @@ export const Wheel = ({ projects }) => {
       <div className="wheel">
 				<div className="center-position"></div>
 				{projects.map((item , i) => {
+					console.log(item)
 					return(
 						<div className="card active" data-index={i + 1} key={`card-${i}`}>
 							<img src={item.data.cover_image.url} />
@@ -118,7 +126,7 @@ export const Wheel = ({ projects }) => {
 								<p>{item.data.year}</p>
 								<h1>{item.data.title}</h1>
 								<p>{item.data.intro}</p>
-								<div className='read-more'><a href="#">Read more</a></div>
+								<div className='read-more'><PrismicLink href={item.url}>Read more</PrismicLink></div>
 							</div>
 						</div>
 					)

@@ -20,10 +20,20 @@ body {
 	background-color: $black;
 	color: $white;
 	font-family: 'Inter';
+	-webkit-font-smoothing: antialiased;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
 }
 
 h1{
-	font-weight: 100;
+	font-weight: 300;
+	font-size: 48px;
+	margin: 14px 0;
+}
+
+p{
+	font-size: 18px;
+	line-height: 1.5;
 }
 
 a{
@@ -137,7 +147,8 @@ button:active {
 
 .info{
 	// display: none;
-	transition: all var(--duration) ease-in-out;
+	// transition: all var(--duration) ease-in-out;
+	transition: height var(--duration) ease-in-out;
 	opacity: 0;
 	height: 0;
 	overflow: hidden;
@@ -167,4 +178,109 @@ button:active {
 		color: $blue;
 		padding: 5px 20px;
 	}
+}
+
+.container{
+	max-width: 900px;
+	display: block;
+	margin: auto;
+	padding: 14px;
+	margin-top: 48px;
+}
+
+.hamburger {
+	position: fixed;
+	right: 2vw;
+	top: 24px;
+	width: 60px;
+	height: 60px;
+	background-image: url('hamburger.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.nav-links {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: auto;
+	margin-top: 48px;
+	padding: 2vw;
+
+	.nav-item {
+		margin: 14px 0;
+		border-bottom: 1px solid $white;
+	}
+
+	a {
+		font-size: 48px;
+	}
+}
+
+.close{
+	font-size: 48px;
+	text-align: right;
+	cursor: pointer;
+	margin-right: 2vw;
+}
+
+.ReactModal__Overlay {
+	opacity: 0;
+	width: 30vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translateX(100vw);
+	transition: all 500ms ease-in-out;
+	background-color: transparent !important;
+	overflow: hidden;
+	z-index: 8;
+}
+
+.ReactModal__Overlay--after-open {
+	opacity: 1;
+	transform: translateX(70vw);
+}
+
+.ReactModal__Overlay--before-close {
+	opacity: 0;
+	transform: translateX(100vw);
+}
+
+.ReactModal__Content {
+	border: none !important;
+	max-width: 91%;
+	height: 100%;
+}
+
+.image-text{
+	display: flex;
+	align-items: center;
+	.image{
+		width: 40%;
+	}
+	.text{
+		width: 55%;
+		max-width: 600px;
+		margin-left: 48px;
+		h1,h2,h3{
+			padding-bottom: 5px;
+			border-bottom: 1px solid $white;
+		}
+	}
+}
+
+.image-section{
+	width: 45%;
+	display: inline-block;
+	margin: 2.5%; 
+}
+
+.underline{
+	width: 100%;
+	padding-bottom: 5px;
+	border-bottom: 1px solid $white;
 }

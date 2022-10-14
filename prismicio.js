@@ -19,6 +19,12 @@ export const linkResolver = (doc) => {
   if (doc.url === "/home") {
     return "/";
   }
+  if (doc.type === "page") {
+    return `/${doc.uid}`;
+  }
+  if (doc.type === "project") {
+    return `/projects/${doc.uid}`;
+  }
 };
 
 /**
@@ -31,6 +37,7 @@ export const createClient = (config = {}) => {
   const client = prismic.createClient(sm.apiEndpoint, {
     routes: [
       { type: "page", path: "/:uid" },
+      { type: "project", path: "/projects/:uid" },
       { type: "settings", path: "/" },
       { type: "navigation", path: "/" },
     ],

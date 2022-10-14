@@ -6,11 +6,9 @@ const Image = ({ slice, index }) => {
   const image = slice.primary.image;
 
   return (
-    <section>
+    <section className="image-section">
       {prismicH.isFilled.image(image) && (
-        <div className="bg-gray-100">
-          <PrismicNextImage field={image} layout="responsive" />
-        </div>
+        <PrismicNextImage field={image} layout="responsive" />
       )}
     </section>
   );

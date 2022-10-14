@@ -1,28 +1,62 @@
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
+import Modal from 'react-modal';
+import React from "react";
 
 export const Header = ({ navigation, settings }) => {
+  const customStyles = {
+		content: {
+			top: '0px',
+			right: '0px',
+      position: 'absolute',
+			backgroundColor: 'black',
+			zIndex: '999',
+		},
+	};
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+	function closeAfterClick(){
+		setTimeout(setIsOpen(false), 3000);
+	}
+
   return (
     <section>
-      {/* <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 leading-none">
-        <PrismicLink href="/" className="text-xl font-semibold tracking-tight">
-          <PrismicText field={settings.data.siteTitle} />
-        </PrismicLink>
-        <nav>
-          <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data?.links.map((item) => (
-              <li
-                key={prismicH.asText(item.label)}
-                className="font-semibold tracking-tight text-slate-800"
-              >
-                <PrismicLink field={item.link}>
-                  <PrismicText field={item.label} />
-                </PrismicLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div> */}
+      <div onClick={openModal} className="hamburger"></div>
+			<Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+				<div className="close" onClick={closeModal}>X</div>
+				<div className="nav-links">
+          <div className="nav-item">
+            <a href={`/`}>
+              Work
+            </a>
+          </div>
+					{navigation.data?.links.map((item) => (
+						<div
+							key={prismicH.asText(item.label)}
+							className="nav-item"
+						>
+							<a href={`/${item.link.uid}`}>
+								<PrismicText field={item.label} />
+							</a>
+						</div>
+					))}
+				</div>
+				
+			</Modal>
     </section>
   );
 };
