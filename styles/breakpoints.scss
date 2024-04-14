@@ -30,13 +30,21 @@
 		margin-left: 0;
 		width: 100%;
 	}
+
+	.home-page *{
+		max-height: 100%;
+		overflow-y: visible!important;
+	}
+
+	.slick-slide{
+		padding-bottom: 150px;
+	}
+
 	.highlights{
-		overflow-y: scroll!important;
-		padding-bottom: 100px;
 		p{
 			font-size: 16px;
 			padding: 0 10px;
-			top: 85vh;
+			margin-top: 15vh;
 		}
 	}
 
