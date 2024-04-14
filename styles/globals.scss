@@ -32,23 +32,39 @@ em{
 	color: $green;
 }
 
+h1, h2{
+	font-weight: 400;
+}
+
+h2{
+	font-size: 36px;
+}
 
 .menu{
 	position: fixed;
-	width: 60%;
-	margin-left: 40%;
+	width: fit-content;
+	right: 0;
 	z-index: 999;
 	top: 0;
 	text-align: right;
-	padding: 10px 2vw;
+	padding: 24px 2vw;
 	a{
 		font-size: 24px;
 		margin-left: 24px;
+		border: 1px solid $white;
+		color: $white;
+		padding: 0px 24px 2px 24px;
+		border-radius: 25px;
+		transition: all 0.4s ease;
+		&:hover{
+			background-color: $green;
+			color: $black;
+		}
 	}
 }
 
 .site-title{
-	top: 14px;
+	top: 24px;
 	position: fixed;
 	margin-left: 2vw;
 	width: 100px;
@@ -167,29 +183,37 @@ p a {
 		position: relative;
 	}
 	.slick-active{
-		p{
+		.intro{
 			opacity: 0;
 			height: 0;
 			overflow-y: scroll;
-			animation: textAni 2s ease 1;
+			animation: textAni 3s ease 1;
 			animation-fill-mode: forwards;
 		}
 	}
-	p{
+	.intro{
 		opacity: 0;
 		position: absolute;
 		font-size: 18px;
-		top: 70vh;
+		top: 60vh;
 		left: 2vw;
 		max-width: 600px;
 		background-color: black;
+		p{
+			padding-top: 0;
+		}
+		h2{
+			padding-bottom: 14px;
+			margin-bottom: 0;
+			border-bottom: 1px solid $white;
+		}
 	}
 }
 
 @keyframes textAni {
   0% {opacity: 0; height: 0;}
-	50% {opacity: 0; height: 0;}
-  100% {opacity: 1; height: 25vh;}
+	25% {opacity: 0; height: 0;}
+  100% {opacity: 1; height: 40vh;}
 }
 
 .highlights *{
@@ -204,4 +228,19 @@ video{
 	object-fit: contain;
 	object-position: center;
 	margin-left: 40%;
+}
+
+.slick-dots{
+	text-align: right;
+	padding-right: 2vw;
+	bottom: 2vh;
+	li button:before{
+		color: $white;
+		opacity: 1;
+		font-size: 12px;
+	}
+	li.slick-active button:before{
+		color: $green;
+		opacity: 1;
+	}
 }

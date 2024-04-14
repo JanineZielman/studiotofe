@@ -7,6 +7,7 @@ import { components } from "../slices/";
 import { Layout } from "../components/Layout";
 
 const Works = ({ page, navigation, settings, projects }) => {
+  console.log(page)
   
   return (
     <Layout navigation={navigation} settings={settings}>
@@ -24,7 +25,9 @@ export default Works;
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getSingle("works");
+  const page = await client.getSingle("works", {
+    fetchLinks: `project.title, project.intro, project.image `
+  });
   const projects = await client.getAllByType("project");
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");

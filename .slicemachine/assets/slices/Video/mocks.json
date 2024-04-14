@@ -15,12 +15,12 @@
       },
       "link": {
         "link_type": "Web",
-        "url": "https://prismic.io"
+        "url": "http://google.com"
       },
       "intro": [
         {
           "type": "paragraph",
-          "text": "Ex consectetur nisi elit mollit do labore ipsum.",
+          "text": "Non excepteur proident quis dolore laboris Lorem sint. Dolore sint irure nulla nostrud. Laboris anim fugiat proident Lorem.",
           "spans": []
         }
       ]

@@ -3,6 +3,9 @@
 		margin-left: 0;
 		width: 100%;
 	}
+	.home .site-title{
+		top: 80px;
+	}
 }
 
 
@@ -23,29 +26,37 @@
 			width: 100%;
 		}
 	}
-	.home .site-title{
-		top: 60px;
-	}
 	video{
 		margin-left: 0;
 		width: 100%;
 	}
 
-	.home-page *{
-		max-height: 100%;
-		overflow-y: visible!important;
-	}
+	// .home-page *{
+	// 	max-height: 100%;
+	// 	overflow-y: visible!important;
+	// }
 
 	.slick-slide{
 		padding-bottom: 150px;
+		overflow-y: scroll!important;
 	}
 
 	.highlights{
+		padding: 0 10px;
+		overflow-y: hidden;
+		.intro{
+			margin-top: 20vh;
+			overflow-y: hidden;
+		}
 		p{
 			font-size: 16px;
-			padding: 0 10px;
-			margin-top: 18vh;
 		}
 	}
-
+	.slick-dots{
+		text-align: center;
+		background-color: black;
+		mix-blend-mode: normal;
+		bottom: 0;
+		padding: 10px 0;
+	}
 }

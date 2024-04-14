@@ -12,7 +12,7 @@ const Index = ({ page, navigation, settings}) => {
   const sliderRef = useRef();
 
   var settingsSlider = {
-    dots: false,
+    dots: true,
     arrows: false,
     infinite: true,
     speed: 1000,
@@ -55,7 +55,9 @@ const Index = ({ page, navigation, settings}) => {
                 <video muted autoPlay loop playsInline key={`video${i}`}>
                   <source src={slice.primary.video.url} type="video/mp4"/>
                 </video>
-                <PrismicRichText field={slice.primary.intro}/>
+                <div className="intro">
+                  <PrismicRichText field={slice.primary.intro}/>
+                </div>
                 </>
               )
             })}

@@ -603,7 +603,7 @@
                     "label": "Intro",
                     "placeholder": "",
                     "allowTargetBlank": true,
-                    "multi": "paragraph,em,strong,list-item,o-list-item"
+                    "multi": "paragraph,strong,em,list-item,o-list-item,heading2"
                   }
                 }
               },
@@ -629,12 +629,12 @@
               },
               "link": {
                 "link_type": "Web",
-                "url": "https://prismic.io"
+                "url": "http://google.com"
               },
               "intro": [
                 {
                   "type": "paragraph",
-                  "text": "Ex consectetur nisi elit mollit do labore ipsum.",
+                  "text": "Non excepteur proident quis dolore laboris Lorem sint. Dolore sint irure nulla nostrud. Laboris anim fugiat proident Lorem.",
                   "spans": []
                 }
               ]
