@@ -596,6 +596,15 @@
                     "placeholder": "",
                     "select": null
                   }
+                },
+                "intro": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Intro",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,em,strong,list-item,o-list-item"
+                  }
                 }
               },
               "items": {},
@@ -620,8 +629,15 @@
               },
               "link": {
                 "link_type": "Web",
-                "url": "https://slicemachine.dev"
-              }
+                "url": "https://prismic.io"
+              },
+              "intro": [
+                {
+                  "type": "paragraph",
+                  "text": "Ex consectetur nisi elit mollit do labore ipsum.",
+                  "spans": []
+                }
+              ]
             },
             "slice_type": "video"
           }

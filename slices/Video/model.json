@@ -26,6 +26,15 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "intro": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Intro",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,em,strong,list-item,o-list-item"
+          }
         }
       },
       "items": {},

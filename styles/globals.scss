@@ -28,27 +28,6 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
-// /* width */
-// ::-webkit-scrollbar {
-// 	height: 10px;
-// }
-
-// /* Track */
-// ::-webkit-scrollbar-track {
-//   background: transparent;
-// }
-
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//   background: $green;
-// 	border-radius: 25px;
-// }
-
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//   background: $green;
-// }
-
 
 .menu{
 	position: fixed;
@@ -116,7 +95,7 @@ h1{
 
 p{
 	font-size: 18px;
-	line-height: 1.5;
+	line-height: 1.4;
 }
 
 a{
@@ -187,6 +166,32 @@ p a {
 
 .highlights{
 	overflow: hidden;
+	.slick-slide{
+		position: relative;
+	}
+	.slick-active{
+		p{
+			opacity: 0;
+			height: 0;
+			overflow-y: scroll;
+			animation: textAni 2s ease 1;
+			animation-fill-mode: forwards;
+		}
+	}
+	p{
+		opacity: 0;
+		position: absolute;
+		font-size: 18px;
+		top: 70vh;
+		left: 2vw;
+		max-width: 600px;
+	}
+}
+
+@keyframes textAni {
+  0% {opacity: 0; height: 0;}
+	50% {opacity: 0; height: 0;}
+  100% {opacity: 1; height: 25vh;}
 }
 
 .highlights *{
@@ -200,5 +205,5 @@ video{
 	width: 75%;
 	object-fit: contain;
 	object-position: center;
-	margin-left: 25%;
+	margin-left: 40%;
 }

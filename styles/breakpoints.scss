@@ -1,3 +1,11 @@
+@media only screen and (max-width: 1100px) {
+	video{
+		margin-left: 0;
+		width: 100%;
+	}
+}
+
+
 @media only screen and (max-width: 600px) {
 	h1{
 		font-size: 36px;
@@ -20,6 +28,14 @@
 	}
 	video{
 		margin-left: 0;
-		margin-right: 25%;
+		width: 100%;
 	}
+	.highlights{
+		p{
+			font-size: 16px;
+			background-color: black;
+			padding: 0 10px;
+		}
+	}
+
 }

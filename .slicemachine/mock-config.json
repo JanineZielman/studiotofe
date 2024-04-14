@@ -84,7 +84,14 @@
     },
     "Video": {
       "default": {
-        "primary": {}
+        "primary": {
+          "intro": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   },
