@@ -21,13 +21,13 @@ const Works = ({ page, navigation, settings, projects }) => {
 
 export default Works;
 
-export async function getStaticProps({ locale, previewData }) {
+export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getSingle("works", { lang: locale });
-  const projects = await client.getAllByType("project", { lang: "*" });
-  const navigation = await client.getSingle("navigation", { lang: locale });
-  const settings = await client.getSingle("settings", { lang: locale });
+  const page = await client.getSingle("works");
+  const projects = await client.getAllByType("project");
+  const navigation = await client.getSingle("navigation");
+  const settings = await client.getSingle("settings");
 
   return {
     props: {

@@ -19,6 +19,14 @@ const Index = ({ page, navigation, settings}) => {
     cssEase: 'linear',
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          speed: 500,
+        }
+      },
+    ]
   };
 
   const onWheelSlider = (e, ref) => {
