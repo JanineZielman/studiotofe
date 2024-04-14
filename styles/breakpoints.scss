@@ -16,6 +16,21 @@
 	p{
 		font-size: 14px;
 	}
+	.menu{
+		padding-top: 14px;
+		a{
+			font-size: 18px;
+			padding-left: 14px;
+			padding-right: 14px;
+			margin-left: 14px;
+		}
+	}
+	.home .site-title{
+		top: 65px;
+	}
+	.false .site-title{
+		top: 14px;
+	}
 	.image-text{
 		flex-direction: column;
 		.image{
@@ -24,13 +39,16 @@
 		.text{
 			margin-left: 0;
 			width: 100%;
+			p{
+				font-size: 18px;
+			}
+			
 		}
 	}
 	video{
 		margin-left: 0;
 		width: 100%;
 	}
-
 	.highlights{
 		.intro{
 			display: none;

@@ -244,3 +244,53 @@ video{
 		opacity: 1;
 	}
 }
+
+.projects{
+	margin-top: 48px;
+	padding: 2vw;
+	.project-item{
+		border-bottom: 1px solid $white;
+		padding: 14px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+		transition: all 0.8s ease;
+		span{
+			border: 1px solid $green;
+			height: fit-content;
+			padding: 1px 10px;
+			border-radius: 25px;
+		}
+		p{
+			padding: 0;
+			margin: 0;
+			font-size: 24px;
+		}
+		img{
+			position: fixed;
+			left: 60%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			height: 0;
+			width: 0;
+			object-fit: contain;
+			transition: all 0.8s ease;
+			visibility: hidden;
+			opacity: 0;
+			z-index: 2;
+		}
+		&:hover{
+			color: $green;
+			border-color: $green;
+			img{
+				visibility: visible;
+				opacity: 1;
+				height: 80vh;
+				width: auto;
+				max-width: 50vw;
+			}
+		}
+	}
+}
