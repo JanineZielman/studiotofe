@@ -33,6 +33,49 @@ body {
 	}
 }
 
+
+.site-title{
+	position: fixed;
+	margin-top: 14px;
+	margin-left: 2vw;
+	width: 100px;
+	height: 50px;
+	mask-image: url(./logo.svg);
+	background-color: $green;
+	mask-repeat: no-repeat;
+	mask-size: contain;
+	transition: all 0.4s ease;
+}
+
+.false{
+	animation: fadeIn 1s ease 1;
+	.site-title{
+		width: 100px;
+		height: 50px;
+		animation-fill-mode: forwards;
+	}
+}
+
+.home{
+	.site-title{
+		z-index: -1;
+		width: 70vw;
+		height: 100vh;
+		animation-fill-mode: forwards;
+		animation: smallToBig 1s ease 1;
+	}
+}
+
+@keyframes smallToBig {
+  from {width: 100px; height: 50px;}
+  to {width: 70vw;  height: 100vh;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 h1{
 	font-weight: 300;
 	font-size: 48px;
@@ -60,6 +103,8 @@ p a {
 	margin: auto;
 	padding: 14px;
 	margin-top: 48px;
+	animation-fill-mode: forwards;
+	animation: fadeIn 1.5s ease 1;
 }
 
 .image-text{

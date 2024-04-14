@@ -13,7 +13,6 @@ const Index = ({ page, navigation, settings, projects }) => {
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
-      
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );
