@@ -31,7 +31,8 @@ body {
 
 .menu{
 	position: fixed;
-	width: 100%;
+	width: 60%;
+	margin-left: 40%;
 	z-index: 999;
 	top: 0;
 	text-align: right;
@@ -62,6 +63,7 @@ body {
 		width: 100px;
 		height: 50px;
 		animation-fill-mode: forwards;
+		z-index: 99;
 	}
 }
 
