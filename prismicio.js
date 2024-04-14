@@ -8,23 +8,30 @@ import sm from "./sm.json";
  * The project's Prismic repository name.
  */
 export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
-
 /**
  * The project's Prismic Link Resolver. This function determines the URL for a
  * given Prismic document.
  *
+ * A Link Resolver is used rather than a Route Resolver because we need to
+ * resolve URLs for documents' `alternate_languages` items. The
+ * `alternate_languages` array does not include URLs.
+ *
  * @type {prismicH.LinkResolverFunction}
  */
 export const linkResolver = (doc) => {
-  if (doc.url === "/home") {
-    return "/";
+  if (doc.url === "home") {
+    return `/`;
   }
   if (doc.type === "page") {
     return `/${doc.uid}`;
   }
+  if (doc.type === "works") {
+    return `/works`;
+  }
   if (doc.type === "project") {
     return `/projects/${doc.uid}`;
   }
+  return `/`;
 };
 
 /**
@@ -33,21 +40,10 @@ export const linkResolver = (doc) => {
  *
  * @param config {prismicNext.CreateClientConfig} - A configuration object to
  */
-export const createClient = (config = {}) => {
-  const client = prismic.createClient(sm.apiEndpoint, {
-    routes: [
-      { type: "page", path: "/:uid" },
-      { type: "project", path: "/projects/:uid" },
-      { type: "settings", path: "/" },
-      { type: "navigation", path: "/" },
-    ],
-  });
+export const createClient = ({ previewData, req, ...config } = {}) => {
+  const client = prismic.createClient(sm.apiEndpoint, config);
 
-  prismicNext.enableAutoPreviews({
-    client,
-    previewData: config.previewData,
-    req: config.req,
-  });
+  prismicNext.enableAutoPreviews({ client, previewData, req });
 
   return client;
 };

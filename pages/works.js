@@ -6,7 +6,7 @@ import { createClient } from "../prismicio";
 import { components } from "../slices/";
 import { Layout } from "../components/Layout";
 
-const Index = ({ page, navigation, settings, projects }) => {
+const Works = ({ page, navigation, settings, projects }) => {
   
   return (
     <Layout navigation={navigation} settings={settings}>
@@ -19,12 +19,12 @@ const Index = ({ page, navigation, settings, projects }) => {
   );
 };
 
-export default Index;
+export default Works;
 
 export async function getStaticProps({ locale, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", "home", { lang: locale });
+  const page = await client.getSingle("works", { lang: locale });
   const projects = await client.getAllByType("project", { lang: "*" });
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
