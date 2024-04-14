@@ -5,4 +5,17 @@
 	p{
 		font-size: 14px;
 	}
+	.image-text{
+		flex-direction: column;
+		.image{
+			width: 100%;
+		}
+		.text{
+			margin-left: 0;
+			width: 100%;
+		}
+	}
+	.site-title{
+		top: 60px;
+	}
 }

@@ -5,6 +5,7 @@ import Image from './Image';
 import Quote from './Quote';
 import Text from './Text';
 import TextWithImage from './TextWithImage';
+import Video from './Video';
 
 export {
 	Hero,
@@ -12,6 +13,7 @@ export {
 	Quote,
 	Text,
 	TextWithImage,
+	Video,
 };
 
 export const components = {
@@ -20,4 +22,5 @@ export const components = {
 	quote: Quote,
 	text: Text,
 	text_with_image: TextWithImage,
+	video: Video,
 };

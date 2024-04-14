@@ -12,7 +12,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#000000"/>
         <meta name="theme-color" content="#ffffff"/>
       </Head>
-      <body className="overflow-x-hidden antialiased">
+      <body className={`overflow-x-hidden antialiased`} >
         <Main />
         <NextScript />
       </body>

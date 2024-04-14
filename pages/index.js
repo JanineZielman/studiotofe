@@ -5,16 +5,34 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { components } from "../slices/";
 import { Layout } from "../components/Layout";
+import React, { useRef } from "react";
 
 const Index = ({ page, navigation, settings, projects }) => {
+  const ref = useRef(null);
+
+  const onWheel = (e) => {
+    const elelemnt = ref.current;
+    if (elelemnt) {
+      if (e.deltaY == 0) return;
+      elelemnt.scrollTo({
+        left: elelemnt.scrollLeft + e.deltaY,
+      });
+    }
+  };
+
+  console.log(page)
   
   return (
-    <Layout navigation={navigation} settings={settings}>
-      <Head>
-        <title>{prismicH.asText(page.data.title)}</title>
-      </Head>
-      <SliceZone slices={page.data.slices} components={components} />
-    </Layout>
+    <div className="home-page">
+      <Layout navigation={navigation} settings={settings}>
+        <Head>
+          <title>{prismicH.asText(page.data.title)}</title>
+        </Head>
+        <div className="highlights" ref={ref} onWheel={onWheel}>
+          <SliceZone slices={page.data.slices} components={components} />
+        </div>
+      </Layout>
+    </div>
   );
 };
 

@@ -81,6 +81,11 @@
         },
         "items": {}
       }
+    },
+    "Video": {
+      "default": {
+        "primary": {}
+      }
     }
   },
   "_cts": {
