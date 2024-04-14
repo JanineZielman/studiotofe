@@ -157,15 +157,6 @@ p a {
 	overflow-y: hidden!important;
 }
 
-// .highlights{
-// 	overflow-y: hidden;
-// 	overflow-x: auto;
-//   white-space: nowrap;
-// 	position: absolute;
-// 	top: 0;
-// 	width: 100%;
-// }
-
 .highlights{
 	overflow: hidden;
 	.slick-slide{
@@ -187,6 +178,7 @@ p a {
 		top: 70vh;
 		left: 2vw;
 		max-width: 600px;
+		background-color: black;
 	}
 }
 
