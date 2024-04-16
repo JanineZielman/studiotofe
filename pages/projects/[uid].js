@@ -21,7 +21,7 @@ const Project = ({ page, navigation, settings }) => {
 			<div className="container">
         <div className="hero">
           <div className="scroll"></div>
-          <PrismicNextImage field={page.data.cover_image}/>
+          <img src={page.data.cover_image.url}/>
           <div className="fixed-info">
             <h1>
               <span>{page.data.category}</span><br/>

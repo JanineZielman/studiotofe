@@ -305,9 +305,10 @@ video{
 	justify-content: center;
 	height: calc(100vh - 150px)!important;
 	img{
-		height: calc(100vh - 150px)!important;
-		width: 100%!important;
-		object-fit: contain!important;
+		height: calc(100vh - 150px);
+		width: auto;
+		max-width: 100%;
+		object-fit: contain;
 	}
 	h1{
 		max-width: 600px;
