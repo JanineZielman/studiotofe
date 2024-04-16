@@ -168,9 +168,14 @@ p a {
 }
 
 .image-section{
-	width: 45%;
-	display: inline-block;
-	margin: 2.5%; 
+	width: 100%;
+	img{
+		width: 100%;
+		max-height: 100vh;
+		object-fit: contain;
+		object-position: center;
+		margin-top: 24px;
+	}
 }
 
 .home-page *{

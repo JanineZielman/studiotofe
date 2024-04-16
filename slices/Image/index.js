@@ -1,6 +1,4 @@
 import * as prismicH from "@prismicio/helpers";
-import { PrismicNextImage } from "@prismicio/next";
-import clsx from "clsx";
 
 const Image = ({ slice, index }) => {
   const image = slice.primary.image;
@@ -8,7 +6,7 @@ const Image = ({ slice, index }) => {
   return (
     <section className="image-section">
       {prismicH.isFilled.image(image) && (
-        <PrismicNextImage field={image} layout="responsive" />
+        <img src={image.url} />
       )}
     </section>
   );

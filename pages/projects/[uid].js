@@ -39,9 +39,8 @@ const Project = ({ page, navigation, settings }) => {
         <div className="content">
           <h2>{page.data.intro}</h2>
           <PrismicRichText field={page.data.description}/>
-        </div>
-				
-      	<SliceZone slices={page.data.slices} components={components} />
+          <SliceZone slices={page.data.slices} components={components} />
+        </div>	
 			</div>
     </Layout>
   );
