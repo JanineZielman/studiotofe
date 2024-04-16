@@ -20,16 +20,24 @@ const Project = ({ page, navigation, settings }) => {
       </Head>
 			<div className="container">
         <div className="hero">
-          <div className="scroll"></div>
-          <img src={page.data.cover_image.url}/>
           <div className="fixed-info">
             <h1>
               <span>{page.data.category}</span><br/>
               {page.data.title}
             </h1>
           </div>
+          <div className="scroll"></div>
+          {page.data.video.url ?
+            <video muted autoPlay loop playsInline>
+              <source src={page.data.video.url} type="video/mp4"/>
+            </video>
+          :
+            <img src={page.data.cover_image.url}/>
+          }
+         
         </div>
         <div className="content">
+          <h2>{page.data.intro}</h2>
           <PrismicRichText field={page.data.description}/>
         </div>
 				

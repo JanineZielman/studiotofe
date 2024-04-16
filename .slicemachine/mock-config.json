@@ -2,14 +2,7 @@
   "slices": {
     "Hero": {
       "default": {
-        "primary": {
-          "text": {
-            "config": {
-              "patternType": "STORY",
-              "blocks": 1
-            }
-          }
-        }
+        "primary": {}
       }
     },
     "Text": {
@@ -106,7 +99,14 @@
     },
     "navigation": {},
     "settings": {},
-    "project": {},
+    "project": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
     "works": {}
   }
 }

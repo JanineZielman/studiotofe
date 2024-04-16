@@ -5,8 +5,8 @@ export default {
 }
 
 
-export const _Default = () => <MyComponent slice={{"variation":"default","name":"Default","slice_type":"image","items":[],"primary":{"image":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"}},"id":"_Default"}} />
-_Default.storyName = 'Default'
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"image":{"dimensions":{"width":1080,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1560457079-9a6532ccb118"}},"slice_type":"image","id":"_Default"}} />
+_Default.storyName = ''
 
-export const _Banner = () => <MyComponent slice={{"variation":"banner","name":"Banner","slice_type":"image","items":[],"primary":{"image":{"dimensions":{"width":3000,"height":1000},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1560762484-813fc97650a0?w=3000&h=1000&fit=crop"}},"id":"_Banner"}} />
-_Banner.storyName = 'Banner'
+export const _Banner = () => <MyComponent slice={{"variation":"banner","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"image":{"dimensions":{"width":3000,"height":1000},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1586952518485-11b180e92764"}},"slice_type":"image","id":"_Banner"}} />
+_Banner.storyName = ''

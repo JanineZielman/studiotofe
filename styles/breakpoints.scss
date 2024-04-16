@@ -52,6 +52,38 @@
 		margin-left: 0;
 		width: 100%;
 	}
+	.hero{
+		height: fit-content;
+		img{
+			width: 100%;
+			height: auto;
+			margin-top: 14px;
+			margin-bottom: 5px;
+		}
+		video{
+			object-fit: cover;
+			width: 100%;
+			height: auto;
+			min-height: 50vh;
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0,0);
+			margin-top: 14px;
+			margin-bottom: 5px;
+		}
+		.fixed-info{
+			position: relative;
+			background: none;
+			h1{
+				padding: 0;
+			}
+		}
+	}
+	h2{
+		margin-top: 0;
+		font-size: 30px;
+	}
 	.highlights{
 		.intro{
 			display: none;

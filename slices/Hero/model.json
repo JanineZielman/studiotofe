@@ -11,36 +11,22 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Hero",
       "primary": {
-        "text": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Text",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,heading1,strong,em"
-          }
-        },
-        "buttonLink": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "select": null
-          }
-        },
-        "buttonText": {
-          "type": "Text",
-          "config": {
-            "label": "Button Text",
-            "placeholder": ""
-          }
-        },
-        "backgroundImage": {
+        "image": {
           "type": "Image",
           "config": {
-            "label": "Background Image",
-            "constraint": {},
+            "label": "Image",
+            "constraint": {
+              "width": 1920
+            },
             "thumbnails": []
+          }
+        },
+        "video": {
+          "type": "Link",
+          "config": {
+            "label": "Video",
+            "placeholder": "",
+            "select": "media"
           }
         }
       },
