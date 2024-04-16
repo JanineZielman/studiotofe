@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { SliceZone } from "@prismicio/react";
+import { PrismicLink, SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
@@ -8,22 +8,23 @@ import { Layout } from "../components/Layout";
 import { PrismicNextImage } from "@prismicio/next";
 
 
-const Works = ({ page, navigation, settings, projects }) => {
-  console.log(page)
-  
+const Works = ({ page, navigation, settings, projects }) => {  
   return (
     <Layout navigation={navigation} settings={settings}>
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
         <div className="projects">
-          {page.data.works.map((item, i) => {
+          {projects.map((item, i) => {
             return(
-              <div className="project-item" key={`project${i}`}>
-                <p>{item.work.data.title}</p>
-                <span>{item.work.data.year}</span>
-                <img src={item.work.data.cover_image.url}/>
-              </div>
+              <a href={`/projects/${item.uid}`} className="project-item" key={`project${i}`}>
+                <div>
+                  <p className="category">{item.data.category}</p>
+                  <p>{item.data.title}</p>
+                </div>
+                <span>{item.data.year}</span>
+                <img src={item.data.cover_image.url}/>
+              </a>
             )
           })}
         </div>
@@ -38,10 +39,13 @@ export default Works;
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getSingle("works", {
-    fetchLinks: `project.title, project.intro, project.cover_image, project.year `
+  const page = await client.getSingle("works");
+  const projects = await client.getAllByType("project",{
+    orderings: [
+      { field: "my.project.year", direction: "desc" },
+      { field: "my.project.title", direction: "asc" }
+    ],
   });
-  const projects = await client.getAllByType("project");
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
 

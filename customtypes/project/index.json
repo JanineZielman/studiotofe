@@ -19,10 +19,17 @@
           "placeholder": ""
         }
       },
-      "intro": {
+      "year": {
         "type": "Text",
         "config": {
-          "label": "Intro",
+          "label": "Year",
+          "placeholder": ""
+        }
+      },
+      "category": {
+        "type": "Text",
+        "config": {
+          "label": "Category",
           "placeholder": ""
         }
       },
@@ -31,16 +38,16 @@
         "config": {
           "label": "Cover Image",
           "constraint": {
-            "width": 600,
-            "height": 900
+            "width": 1080,
+            "height": null
           },
           "thumbnails": []
         }
       },
-      "year": {
+      "intro": {
         "type": "Text",
         "config": {
-          "label": "Year",
+          "label": "Intro",
           "placeholder": ""
         }
       },

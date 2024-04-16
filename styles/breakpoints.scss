@@ -25,6 +25,9 @@
 			margin-left: 14px;
 		}
 	}
+	.scroll{
+		display: none;
+	}
 	.home .site-title{
 		top: 65px;
 	}
@@ -62,5 +65,10 @@
 		position: relative;
 		bottom: 100px;
 		padding: 10px 0;
+	}
+	.content{
+		p{
+			font-size: 18px;
+		}
 	}
 }

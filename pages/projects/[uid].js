@@ -9,7 +9,7 @@ import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
 
 const Project = ({ page, navigation, settings }) => {
-	console.log(page)
+
   return (
     <Layout navigation={navigation} settings={settings}>
       <Head>
@@ -19,8 +19,20 @@ const Project = ({ page, navigation, settings }) => {
         </title>
       </Head>
 			<div className="container">
-				<h1 className="underline">{page.data.title}</h1>
-				<PrismicRichText field={page.data.description}/>
+        <div className="hero">
+          <div className="scroll"></div>
+          <PrismicNextImage field={page.data.cover_image}/>
+          <div className="fixed-info">
+            <h1>
+              <span>{page.data.category}</span><br/>
+              {page.data.title}
+            </h1>
+          </div>
+        </div>
+        <div className="content">
+          <PrismicRichText field={page.data.description}/>
+        </div>
+				
       	<SliceZone slices={page.data.slices} components={components} />
 			</div>
     </Layout>
