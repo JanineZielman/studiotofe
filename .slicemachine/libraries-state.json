@@ -1,88 +1,6 @@
 {
   "slices": {
     "components": {
-      "hero": {
-        "library": "slices",
-        "id": "hero",
-        "name": "Hero",
-        "description": "Hero",
-        "model": {
-          "id": "hero",
-          "type": "SharedSlice",
-          "name": "Hero",
-          "description": "Hero",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "Hero",
-              "primary": {
-                "image": {
-                  "type": "Image",
-                  "config": {
-                    "label": "Image",
-                    "constraint": {
-                      "width": 1920
-                    },
-                    "thumbnails": []
-                  }
-                },
-                "video": {
-                  "type": "Link",
-                  "config": {
-                    "label": "Video",
-                    "placeholder": "",
-                    "select": "media"
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {}
-            ],
-            "primary": {
-              "image": {
-                "dimensions": {
-                  "width": 1920,
-                  "height": 500
-                },
-                "alt": null,
-                "copyright": null,
-                "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
-              },
-              "video": {
-                "link_type": "Media",
-                "name": "mock",
-                "kind": "image",
-                "url": "https://source.unsplash.com/random",
-                "size": "10kB"
-              }
-            },
-            "slice_type": "hero"
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "js"
-        },
-        "screenshotPaths": {
-          "default": {
-            "path": "/Users/janinezielman/Documents/Sites/Prismic/tofe/.slicemachine/assets/slices/Hero/default/preview.png",
-            "width": 800,
-            "height": 694
-          }
-        }
-      },
       "image": {
         "library": "slices",
         "id": "image",
@@ -112,7 +30,18 @@
                   }
                 }
               },
-              "items": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {
+                      "width": 1080
+                    },
+                    "thumbnails": []
+                  }
+                }
+              },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             },
             {
@@ -144,7 +73,17 @@
             "variation": "default",
             "version": "sktwi1xtmkfgx8626",
             "items": [
-              {}
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 1080,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
+                }
+              }
             ],
             "primary": {
               "image": {
@@ -154,7 +93,7 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118"
+                "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
               }
             },
             "slice_type": "image"
@@ -173,7 +112,7 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764"
+                "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
               }
             },
             "slice_type": "image"
@@ -193,76 +132,6 @@
             "path": "/Users/janinezielman/Documents/Sites/Prismic/tofe/.slicemachine/assets/slices/Image/banner/preview.png",
             "width": 800,
             "height": 363
-          }
-        }
-      },
-      "quote": {
-        "library": "slices",
-        "id": "quote",
-        "name": "Quote",
-        "description": "Quote",
-        "model": {
-          "id": "quote",
-          "type": "SharedSlice",
-          "name": "Quote",
-          "description": "Quote",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "Quote",
-              "primary": {
-                "quote": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Quote",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "single": "strong,em,heading3"
-                  }
-                },
-                "source": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Source",
-                    "placeholder": ""
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "name": "Default",
-            "slice_type": "quote",
-            "items": [],
-            "primary": {
-              "quote": [
-                {
-                  "type": "heading3",
-                  "text": "Extend leading-edge e-commerce",
-                  "spans": []
-                }
-              ],
-              "source": "transition robust synergies"
-            }
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "js"
-        },
-        "screenshotPaths": {
-          "default": {
-            "path": "/Users/janinezielman/Documents/Sites/Prismic/tofe/.slicemachine/assets/slices/Quote/default/preview.png",
-            "width": 800,
-            "height": 392
           }
         }
       },
@@ -383,170 +252,6 @@
           }
         }
       },
-      "text_with_image": {
-        "library": "slices",
-        "id": "text_with_image",
-        "name": "TextWithImage",
-        "description": "TextWithImage",
-        "model": {
-          "id": "text_with_image",
-          "type": "SharedSlice",
-          "name": "TextWithImage",
-          "description": "TextWithImage",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "TextWithImage",
-              "primary": {
-                "text": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Text",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink,list-item,o-list-item"
-                  }
-                },
-                "image": {
-                  "type": "Image",
-                  "config": {
-                    "label": "Image",
-                    "constraint": {
-                      "width": 1000,
-                      "height": 1200
-                    },
-                    "thumbnails": []
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            },
-            {
-              "id": "withButton",
-              "name": "With Button",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "TextWithImage",
-              "primary": {
-                "text": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Text",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink,o-list-item,list-item"
-                  }
-                },
-                "buttonLink": {
-                  "type": "Link",
-                  "config": {
-                    "label": "Button Link",
-                    "placeholder": "",
-                    "select": null
-                  }
-                },
-                "buttonText": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Button Text",
-                    "placeholder": ""
-                  }
-                },
-                "image": {
-                  "type": "Image",
-                  "config": {
-                    "label": "Image",
-                    "constraint": {},
-                    "thumbnails": []
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "name": "Default",
-            "slice_type": "text_with_image",
-            "items": [],
-            "primary": {
-              "text": [
-                {
-                  "type": "heading1",
-                  "text": "Engineer customized ROI",
-                  "spans": []
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Aliquip non nulla ex ullamco nulla. Occaecat nostrud laborum consectetur adipisicing. Incididunt sunt consequat non mollit dolore deserunt qui veniam esse fugiat elit nulla amet.",
-                  "spans": []
-                }
-              ],
-              "image": {
-                "dimensions": {
-                  "width": 1000,
-                  "height": 1200
-                },
-                "alt": "Placeholder image",
-                "copyright": null,
-                "url": "https://images.prismic.io/nextjs-starter-prismic-multi-page/fcb2333d-d2b2-4cdc-acdd-f9558703472d_anders-jilden-Sc5RKXLBjGg-unsplash.jpg?w=1000&h=1200&fit=crop"
-              }
-            }
-          },
-          "withButton": {
-            "variation": "withButton",
-            "name": "With Button",
-            "slice_type": "text_with_image",
-            "items": [],
-            "primary": {
-              "text": [
-                {
-                  "type": "paragraph",
-                  "text": "Voluptate dolore ea et. Officia pariatur velit veniam velit cillum deserunt sit anim quis officia eiusmod. Eiusmod ipsum aute exercitation consectetur incididunt aliquip in elit esse do mollit velit duis.",
-                  "spans": []
-                }
-              ],
-              "buttonLink": {
-                "link_type": "Web",
-                "url": "http://google.com"
-              },
-              "buttonText": "synthesize cutting-edge synergies",
-              "image": {
-                "dimensions": {
-                  "width": 900,
-                  "height": 500
-                },
-                "alt": "Placeholder image",
-                "copyright": null,
-                "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
-              }
-            }
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "js"
-        },
-        "screenshotPaths": {
-          "default": {
-            "path": "/Users/janinezielman/Documents/Sites/Prismic/tofe/slices/TextWithImage/default/preview.png",
-            "width": 2292,
-            "height": 1328
-          },
-          "withButton": {
-            "path": "/Users/janinezielman/Documents/Sites/Prismic/tofe/.slicemachine/assets/slices/TextWithImage/withButton/preview.png",
-            "width": 800,
-            "height": 424
-          }
-        }
-      },
       "video": {
         "library": "slices",
         "id": "video",
@@ -573,25 +278,45 @@
                     "select": "media"
                   }
                 },
-                "link": {
-                  "type": "Link",
-                  "config": {
-                    "label": "Link",
-                    "placeholder": "",
-                    "select": null
-                  }
-                },
                 "intro": {
                   "type": "StructuredText",
                   "config": {
                     "label": "Intro",
                     "placeholder": "",
                     "allowTargetBlank": true,
-                    "multi": "paragraph,strong,em,list-item,o-list-item,heading2"
+                    "multi": "paragraph,heading2,strong,em,list-item,o-list-item,hyperlink"
                   }
                 }
               },
               "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "basic",
+              "name": "Basic",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Video",
+              "primary": {
+                "video": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Video",
+                    "placeholder": "",
+                    "select": "media"
+                  }
+                }
+              },
+              "items": {
+                "video": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Video",
+                    "placeholder": "",
+                    "select": "media"
+                  }
+                }
+              },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
@@ -611,17 +336,38 @@
                 "url": "https://source.unsplash.com/random",
                 "size": "10kB"
               },
-              "link": {
-                "link_type": "Web",
-                "url": "http://google.com"
-              },
               "intro": [
                 {
                   "type": "paragraph",
-                  "text": "Non excepteur proident quis dolore laboris Lorem sint. Dolore sint irure nulla nostrud. Laboris anim fugiat proident Lorem.",
+                  "text": "Proident reprehenderit ea ad reprehenderit qui voluptate exercitation amet consequat laboris voluptate ut do irure. Amet nulla aliqua proident ipsum nulla cillum labore irure ut irure id occaecat adipisicing minim elit. Voluptate velit eu fugiat cupidatat anim consectetur ullamco velit nulla ut esse anim.",
                   "spans": []
                 }
               ]
+            },
+            "slice_type": "video"
+          },
+          "basic": {
+            "variation": "basic",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "video": {
+                  "link_type": "Media",
+                  "name": "mock",
+                  "kind": "image",
+                  "url": "https://source.unsplash.com/random",
+                  "size": "10kB"
+                }
+              }
+            ],
+            "primary": {
+              "video": {
+                "link_type": "Media",
+                "name": "mock",
+                "kind": "image",
+                "url": "https://source.unsplash.com/random",
+                "size": "10kB"
+              }
             },
             "slice_type": "video"
           }
@@ -630,7 +376,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/janinezielman/Documents/Sites/Prismic/tofe/slices/Video/default/preview.png",
+            "width": 3022,
+            "height": 1504
+          }
+        }
       }
     }
   }

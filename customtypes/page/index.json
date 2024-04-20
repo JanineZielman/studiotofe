@@ -28,9 +28,6 @@
           "choices": {
             "video": {
               "type": "SharedSlice"
-            },
-            "text_with_image": {
-              "type": "SharedSlice"
             }
           }
         }

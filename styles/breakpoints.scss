@@ -94,6 +94,9 @@
 	}
 	.slick-dots{
 		text-align: center;
+		transform: rotate(0);
+		bottom: 0;
+		left: 0;
 		position: relative;
 		bottom: 100px;
 		padding: 10px 0;

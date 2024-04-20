@@ -19,7 +19,8 @@
     },
     "Image": {
       "default": {
-        "primary": {}
+        "primary": {},
+        "items": {}
       },
       "banner": {
         "primary": {}
@@ -85,6 +86,9 @@
             }
           }
         }
+      },
+      "basic": {
+        "primary": {}
       }
     }
   },

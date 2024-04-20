@@ -167,14 +167,24 @@ p a {
 	}
 }
 
-.image-section{
+.image-section, .video-section{
 	width: 100%;
-	img{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 24px 0;
+	&.multi{
+		.image, .video{
+			width: 49%;
+		}
+	}
+	img, video{
 		width: 100%;
+		height: 100%;
 		max-height: 100vh;
 		object-fit: contain;
 		object-position: center;
-		margin-top: 24px;
+		margin-left: 0;
 	}
 }
 
@@ -207,6 +217,10 @@ p a {
 		background-color: black;
 		p{
 			padding-top: 0;
+			a{
+				color: $green;
+				text-decoration: none;
+			}
 		}
 		h2{
 			padding-bottom: 14px;
@@ -237,9 +251,11 @@ video{
 }
 
 .slick-dots{
-	text-align: right;
+	// text-align: right;
 	padding-right: 2vw;
-	bottom: 2vh;
+	bottom: 50px;
+	left: 98vw;
+	transform: translate(-50%, -50%) rotate(90deg);
 	li button:before{
 		color: $white;
 		opacity: 1;
@@ -346,6 +362,7 @@ video{
 		left: 0;
 		bottom: 0;
 		width: 100%;
+		z-index: 9;
 	}
 }
 
@@ -377,7 +394,8 @@ video{
 	display: flex;
 	align-items: end;
 	flex-direction: column;
-	margin: 24px 0 100px 0;
+	margin: 48px 0 100px 0;
+	position: relative;
 	p{
 		font-size: 20px;
 		max-width: 600px;
