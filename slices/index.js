@@ -3,15 +3,18 @@
 import Image from './Image';
 import Text from './Text';
 import Video from './Video';
+import TextWithImage from './TextWithImage';
 
 export {
 	Image,
 	Text,
+	TextWithImage,
 	Video,
 };
 
 export const components = {
 	image: Image,
 	text: Text,
+	text_with_image: TextWithImage,
 	video: Video,
 };
