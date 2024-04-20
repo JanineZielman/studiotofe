@@ -171,9 +171,10 @@ p a {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 24px 0;
 	&.multi{
+		justify-content: space-between;
 		.image, .video{
 			width: 49%;
 		}
