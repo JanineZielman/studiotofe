@@ -5,7 +5,6 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { components } from "../slices/";
 import { Layout } from "../components/Layout";
-import { PrismicNextImage } from "@prismicio/next";
 
 
 const Works = ({ page, navigation, settings, projects }) => {  

@@ -3,7 +3,6 @@ import { PrismicRichText, SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
-import { components } from "../slices/";
 import { Layout } from "../components/Layout";
 import React, { useRef } from "react";
 import Slider from "react-slick";
@@ -30,7 +29,6 @@ const Index = ({ page, navigation, settings}) => {
   };
 
   const onWheelSlider = (e, ref) => {
-    console.log(e)
     if (e.deltaY > 10) {
       sliderRef.current.slickNext();
 
@@ -38,7 +36,6 @@ const Index = ({ page, navigation, settings}) => {
     if (e.deltaY < -10) {
       sliderRef.current.slickPrev();
     }
-
   };
   
   return (
@@ -51,14 +48,14 @@ const Index = ({ page, navigation, settings}) => {
           <Slider {...settingsSlider} ref={sliderRef}>
             {page.data.slices.map((slice, i) => {
               return(
-                <>
-                <video muted autoPlay loop playsInline key={`video${i}`}>
-                  <source src={slice.primary.video.url} type="video/mp4"/>
-                </video>
-                <div className="intro">
-                  <PrismicRichText field={slice.primary.intro}/>
+                <div key={`video${i}`}>
+                  <video muted autoPlay loop playsInline>
+                    <source src={slice.primary.video?.url} type="video/mp4"/>
+                  </video>
+                  <div className="intro">
+                    <PrismicRichText field={slice.primary.intro}/>
+                  </div>
                 </div>
-                </>
               )
             })}
         </Slider>
@@ -70,12 +67,12 @@ const Index = ({ page, navigation, settings}) => {
 
 export default Index;
 
-export async function getStaticProps({ locale, previewData }) {
+export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", "home", { lang: locale });
-  const navigation = await client.getSingle("navigation", { lang: locale });
-  const settings = await client.getSingle("settings", { lang: locale });
+  const page = await client.getByUID("page", "home");
+  const navigation = await client.getSingle("navigation");
+  const settings = await client.getSingle("settings");
 
   return {
     props: {

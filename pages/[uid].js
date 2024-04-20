@@ -24,12 +24,12 @@ const Page = ({ page, navigation, settings }) => {
 
 export default Page;
 
-export async function getStaticProps({ params, locale, previewData }) {
+export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", params.uid, { lang: locale });
-  const navigation = await client.getSingle("navigation", { lang: locale });
-  const settings = await client.getSingle("settings", { lang: locale });
+  const page = await client.getByUID("page", params.uid);
+  const navigation = await client.getSingle("navigation");
+  const settings = await client.getSingle("settings");
 
   return {
     props: {

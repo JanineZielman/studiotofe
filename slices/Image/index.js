@@ -10,7 +10,7 @@ const Image = ({ slice}) => {
       )}
       {slice.items.map((item, i) => {
         return(
-          <div className="image"><img key={`project-image${i}`} src={item.image.url} /></div>
+          <div className="image" key={`project-image${i}`}><img src={item.image.url} /></div>
         )
       })}
     </section>
