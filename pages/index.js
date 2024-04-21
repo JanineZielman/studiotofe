@@ -58,7 +58,7 @@ const Index = ({ page, navigation, settings}) => {
               <span></span>
               <span></span>
             </div>
-            <div className="loading-txt">loading</div>
+            <div className="loading-txt">Loading</div>
           </div>
         :
         <Layout navigation={navigation} settings={settings}>
