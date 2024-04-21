@@ -1,7 +1,7 @@
 import { Header } from "./Header";
 import Head from "next/head";
 
-export const Layout = ({ navigation, settings, children }) => {
+export const Layout = ({ navigation, settings, children, loading }) => {
   return (
     <>
       <Head>
@@ -9,7 +9,9 @@ export const Layout = ({ navigation, settings, children }) => {
         <meta property="og:description" content={settings.data.site_description} />
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
-      <Header navigation={navigation} settings={settings} />
+      {!loading &&
+        <Header navigation={navigation} settings={settings} />
+      }
       <main>{children}</main>
     </>
   );

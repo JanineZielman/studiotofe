@@ -50,18 +50,18 @@ const Index = ({ page, navigation, settings}) => {
   
   return (
     <div className="home-page">
-      {loading ?
-          <div className="loading-screen">
-            <div className="loader">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div className="loading-txt">Loading</div>
+      {loading &&
+        <div className="loading-screen">
+          <div className="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-        :
-        <Layout navigation={navigation} settings={settings}>
+          <div className="loading-txt">Loading</div>
+        </div>
+      }
+        <Layout navigation={navigation} settings={settings} loading={loading}>
           <Head>
             <title>{prismicH.asText(page.data.title)} |{" "}
             {prismicH.asText(settings.data.siteTitle)}
@@ -75,16 +75,18 @@ const Index = ({ page, navigation, settings}) => {
                     <video muted autoPlay loop playsInline>
                       <source src={slice.primary.video?.url} type="video/mp4"/>
                     </video>
-                    <div className="intro">
-                      <PrismicRichText field={slice.primary.intro}/>
-                    </div>
+                    {!loading &&
+                      <div className="intro">
+                        <PrismicRichText field={slice.primary.intro}/>
+                      </div>
+                    }
                   </div>
                 )
               })}
           </Slider>
           </div>
         </Layout>
-        }
+        
     </div>
   );
 };
