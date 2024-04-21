@@ -67,7 +67,7 @@ const Index = ({ page, navigation, settings}) => {
             {prismicH.asText(settings.data.siteTitle)}
             </title>
           </Head>
-          <div className="highlights fadeIn" onWheel={onWheelSlider}>
+          <div className="highlights" onWheel={onWheelSlider}>
             <Slider {...settingsSlider} ref={sliderRef}>
               {page.data.slices.map((slice, i) => {
                 return(
