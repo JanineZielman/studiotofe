@@ -11,7 +11,10 @@ const Works = ({ page, navigation, settings, projects }) => {
   return (
     <Layout navigation={navigation} settings={settings}>
       <Head>
-        <title>{prismicH.asText(page.data.title)}</title>
+        <title>
+          {prismicH.asText(page.data.title)} |{" "}
+          {prismicH.asText(settings.data.siteTitle)}
+        </title>
       </Head>
         <div className="projects">
           {projects.map((item, i) => {
