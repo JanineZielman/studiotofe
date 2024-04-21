@@ -15,7 +15,6 @@ const Index = ({ page, navigation, settings}) => {
     dots: true,
     arrows: false,
     infinite: true,
-    lazyLoad: 'ondemand',
     speed: 1000,
     cssEase: 'linear',
     slidesToShow: 1,
