@@ -100,6 +100,10 @@ h2{
 	}
 }
 
+.fadeIn{
+	animation: fadeIn 1s ease 1;
+}
+
 @keyframes smallToBig {
   from {width: 100px; height: 50px;}
   to {width: 100vh;  height: 100vh;}
@@ -402,4 +406,88 @@ video{
 		font-size: 20px;
 		max-width: 600px;
 	}
+}
+
+
+
+// loader
+.loading-screen{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: $black;
+	z-index: 999;
+}
+
+.loading-txt{
+	margin-top: 14px;
+	animation: loading 1.2s linear infinite alternate;
+}
+
+@keyframes loading {
+	0% {
+			opacity: 0;
+	}
+	100% {
+			opacity: 1;
+	}
+}
+
+.loader {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: linear-gradient($green, $white);
+	animation: animate 1.2s linear infinite;
+}
+
+@keyframes animate {
+	0% {
+			transform: rotate(0deg);
+	}
+	100% {
+			transform: rotate(360deg);
+	}
+}
+
+.loader span {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: linear-gradient($green, $white);
+}
+
+.loader span:nth-child(1) {
+	filter: blur(5px);
+}
+
+.loader span:nth-child(2) {
+	filter: blur(10px);
+}
+
+.loader span:nth-child(3) {
+	filter: blur(25px);
+}
+
+.loader span:nth-child(4) {
+	filter: blur(50px);
+}
+
+.loader:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	background: $black;
+	border-radius: 50%;
 }

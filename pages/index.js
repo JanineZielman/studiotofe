@@ -4,16 +4,18 @@ import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Slider from "react-slick";
 
 const Index = ({ page, navigation, settings}) => {
   const sliderRef = useRef();
+  const [loading, setLoading] = useState(true);
 
   var settingsSlider = {
     dots: true,
     arrows: false,
     infinite: true,
+    lazyLoad: 'ondemand',
     speed: 1000,
     cssEase: 'linear',
     slidesToShow: 1,
@@ -37,32 +39,52 @@ const Index = ({ page, navigation, settings}) => {
       sliderRef.current.slickPrev();
     }
   };
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(function() {
+      setLoading(false);
+    }, 2000);
+  }, [])
+  
   
   return (
     <div className="home-page">
-      <Layout navigation={navigation} settings={settings}>
-        <Head>
-          <title>{prismicH.asText(page.data.title)} |{" "}
-          {prismicH.asText(settings.data.siteTitle)}
-          </title>
-        </Head>
-        <div className="highlights" onWheel={onWheelSlider}>
-          <Slider {...settingsSlider} ref={sliderRef}>
-            {page.data.slices.map((slice, i) => {
-              return(
-                <div key={`video${i}`}>
-                  <video muted autoPlay loop playsInline>
-                    <source src={slice.primary.video?.url} type="video/mp4"/>
-                  </video>
-                  <div className="intro">
-                    <PrismicRichText field={slice.primary.intro}/>
+      {loading ?
+          <div className="loading-screen">
+            <div className="loader">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div className="loading-txt">loading</div>
+          </div>
+        :
+        <Layout navigation={navigation} settings={settings}>
+          <Head>
+            <title>{prismicH.asText(page.data.title)} |{" "}
+            {prismicH.asText(settings.data.siteTitle)}
+            </title>
+          </Head>
+          <div className="highlights fadeIn" onWheel={onWheelSlider}>
+            <Slider {...settingsSlider} ref={sliderRef}>
+              {page.data.slices.map((slice, i) => {
+                return(
+                  <div key={`video${i}`}>
+                    <video muted autoPlay loop playsInline>
+                      <source src={slice.primary.video?.url} type="video/mp4"/>
+                    </video>
+                    <div className="intro">
+                      <PrismicRichText field={slice.primary.intro}/>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
-        </Slider>
-        </div>
-      </Layout>
+                )
+              })}
+          </Slider>
+          </div>
+        </Layout>
+        }
     </div>
   );
 };
